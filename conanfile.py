@@ -6,6 +6,7 @@ from conans.tools import Version
 
 class ProtobufConan(ConanFile):
     name = "protobuf"
+    version = "3.11.4"
     description = "Protocol Buffers - Google's data interchange format"
     topics = ("conan", "protobuf", "protocol-buffers",
               "protocol-compiler", "serialization", "rpc", "protocol-compiler")
