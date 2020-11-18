@@ -107,3 +107,6 @@ class ProtobufConan(ConanFile):
         self.output.info("Appending PATH environment variable: {}".format(bindir))
         self.env_info.PATH.append(bindir)
 
+    def conan_info(self): # https://github.com/conan-io/conan/issues/212
+        if self.settings.compiler == "gcc" or self.settings.compiler == "clang":  # or3 self.settings.os != "Windows" or the like
+            self.info.settings.build_type = None # Make gcc to be all Release packages linkable to Debug too
