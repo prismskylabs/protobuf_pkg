@@ -14,5 +14,7 @@ if [ "$CONAN_USER_INFO" == "Current user of remote 'psl-conan' set to: 'None' (a
     echo "Please, enter psl-conan (artifactory-cpp) credentials when prompted"
     conan user -r psl-conan  -p
 fi
-conan create $ROOT_DIR   -tbf $TEST_BUILD_DIR
+
+CONAN_PROF=$ROOT_DIR/src/external/edge_build_bootstrap/src/platforms/x86/linux/linux-x86_64-release.pr
+conan create $ROOT_DIR   -tbf $TEST_BUILD_DIR --profile $CONAN_PROF
 
