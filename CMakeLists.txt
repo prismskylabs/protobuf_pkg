@@ -1,8 +1,9 @@
-cmake_minimum_required(VERSION 2.8.12)
-project(cmake_wrapper)
+cmake_minimum_required(VERSION 2.8)
+project(conanzlib)
 
 message(STATUS "Conan CMake Wrapper")
-include("conanbuildinfo.cmake")
-conan_basic_setup(TARGETS)
+include(conanbuildinfo.cmake)
+conan_basic_setup()
 
-add_subdirectory(source_subfolder/cmake)
+include_directories(${CMAKE_SOURCE_DIR}/source_subfolder)
+add_subdirectory("source_subfolder")
